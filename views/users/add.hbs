@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Add Users</title>
+
+    <style>
+      label { display: block; margin: 10px 0; }
+    </style>
+  </head>
+  <body>
+
+    <h2>Add user</h2>
+
+    <a href='/users'>Show Users List</a>
+
+    {{! add form }}
+    <form id='form-test' method='POST' action='/users/add'>
+
+      <label>
+        First Name:
+        <input type='text' name='firstName' />
+      </label>
+      <label>
+        Last Name:
+        <input type='text' name='lastName' />
+      </label>
+      <label>
+        Introduction:
+        <input type='text' name='introduction' />
+      </label>
+      <label>
+        Email:
+        <input type='text' name='email' />
+      </label>
+      <label>
+        Phone:
+        <input type='number' name='phone' />
+      </label>
+      <label>
+        Experience:
+        <input type='string' name='experience' />
+      </label>
+      <label>
+        Achievements:
+        <input type='text' name='achievements' />
+      </label>
+
+      <button type='submit'>Add</button>
+
+    </form>
+
+    {{! show success message }}
+    {{#if successMessage}}
+
+      <p style='color: teal;'>{{successMessage}}</p>
+
+    {{/if}}
+
+    {{! show errors }}
+    {{#if errors.length}}
+
+      <div style='background-color: #ffcccb;'>
+
+        <h3>Errors</h3>
+
+        {{#each errors}}
+          <p>{{this}}</p>
+        {{/each}}
+      </div>
+
+    {{/if}}
+
+  </body>
+
+</html>

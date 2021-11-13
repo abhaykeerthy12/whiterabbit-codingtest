@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>All Users</title>
+  </head>
+  <body>
+
+    {{#if users.length}}
+
+      <div>
+
+        <h3>All Users</h3>
+        <hr />
+
+        <ol>
+          {{#each users}}
+            <li>{{this.firstName}}
+              {{this.lastName}},
+              {{this.email}}
+              <a href='/users/{{this._id}}'>Details</a></li>
+          {{/each}}
+        </ol>
+      </div>
+
+    {{else}}
+
+      <p>No users</p>
+      <a href='/users/add'>Click here to add new user</a>
+
+    {{/if}}
+
+  </body>
+
+</html>
